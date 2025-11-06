@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mouse Trail Page!</title>
     <style>
-        .trail {
+        .mousetrail {
             position: absolute;
             height: 6px;
             width: 6px;
             border-radius: 3px;
-            background: teal;
+            background: #f6e4f6;
         }
 
         body {
@@ -22,14 +22,14 @@
 
 <body>
     <script>
-        let dot = document.createElement("trailDots");
-        dot.className = "trailDots"; 
-        window.addEventListener("click", event => {
-        let dot = document.createElement("div");
-        dot.className = "dot";
-        dot.style.left = (event.pageX - 4) + "px";
-        dot.style.top = (event.pageY - 4) + "px";
-        document.body.appendChild(dot);
+        window.addEventListener("mousemove", event => {
+            let dot = document.createElement("div");
+            dot.className = "mousetrail";
+            dot.style.left = (event.pageX - 4) + "px";
+            dot.style.top = (event.pageY - 4) + "px";
+            document.body.appendChild(dot);
+        })
+
     </script>
 </body>
 
