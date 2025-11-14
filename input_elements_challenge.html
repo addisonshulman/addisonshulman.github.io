@@ -68,10 +68,10 @@
         newsletter</label
       >
       <p>Pick a mode:</p>
-      <label><input type="radio" name="mode" value="Light" /> Light</label>
-      <label><input type="radio" name="mode" value="Dark" /> Dark</label>
+      <label><input type="radio" name="mode" id="lightMode" value="Light" /> Light</label>
+      <label><input type="radio" name="mode" id="darkMode" value="Dark" /> Dark</label>
       <label
-        ><input type="radio" name="mode" value="System" checked /> System</label
+        ><input type="radio" name="mode" id="systemMode" value="System" checked /> System</label
       >
       <button id="btnSubmit">Submit</button>
       <div class="output" id="modeOutput"></div>
@@ -132,6 +132,21 @@
       btnSubmit.addEventListener("click", () => {
         // TODO: Find which radio button is checked and display it.
         // Challenge: Include whether the user subscribed or not.
+        if (lightMode.checked){
+          modeOutput.textContent = "Selected mode: " + "Light mode"
+        }
+        
+        if (darkMode.checked){
+          modeOutput.textContent = "Selected mode: " + "Dark mode"
+        }
+        
+        if (systemMode.checked){
+          modeOutput.textContent = "Selected mode: " + "System mode"
+        }
+
+        if (subscribeBox.checked){
+          modeOutput.textContent += " (Subscribe box checked)"
+        }
       });
     </script>
   </body>
