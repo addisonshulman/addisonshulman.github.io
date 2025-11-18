@@ -58,6 +58,10 @@
         Volume:
         <input id="volumeInput" type="range" min="0" max="100" value="50" />
       </label>
+      <label>
+        Temp:
+        <input id="tempInput" type="range" min="0" max="360" value="1" />
+      </label>
       <div class="output" id="colorOutput"></div>
     </section>
 
@@ -142,33 +146,45 @@
       const btnSubmit = document.getElementById("btnSubmit");
       const modeOutput = document.getElementById("modeOutput");
 
+      // function myName () {}
+
+      //let myName2 = function () {}
+
+      //let myName3 = () => {}
+
       btnSubmit.addEventListener("click", () => {
         // TODO: Find which radio button is checked and display it.
         // Challenge: Include whether the user subscribed or not.
         if (lightMode.checked) {
           modeOutput.textContent = "Selected mode: " + "Light mode";
           document.body.style.backgroundColor = "#FFFF00";
-          modeOutput.textContent =
-          "Selected mode: Light mode"
+          modeOutput.textContent = "Selected mode: Light mode";
         }
 
         if (darkMode.checked) {
           modeOutput.textContent = "Selected mode: " + "Dark mode";
           document.body.style.backgroundColor = "#808080";
-          modeOutput.textContent =
-          "Selected mode: Dark mode"
+          modeOutput.textContent = "Selected mode: Dark mode";
         }
 
         if (systemMode.checked) {
           modeOutput.textContent = "Selected mode: " + "System mode";
           document.body.style.backgroundColor = "#B0E0E6";
-          modeOutput.textContent =
-          "Selected mode: System mode"
+          modeOutput.textContent = "Selected mode: System mode";
         }
 
         if (subscribeBox.checked) {
           modeOutput.textContent += " (Subscribe box checked)";
         }
+      });
+
+      // Color slider demo
+      const tempInput = document.getElementById("tempInput");
+      tempInput.addEventListener("input", () => {
+        document.body.style.backgroundColor =
+          "hsl(" + tempInput.value + ", 100%, 80%)";
+        document.body.style.color =
+          "hsl(" + ((parseInt(tempInput.value) + 180) % 360) + ", 100%, 80%)";
       });
     </script>
   </body>
