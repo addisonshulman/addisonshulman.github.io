@@ -39,50 +39,49 @@
         <li>Change the color of the background.</li>
         <li>Change the color of the text.</li>
     </ul>
-    <section id="widgetControls">
-      <h2>Controls</h2>
+    <section id="colorWidgetControls">
+      <h2>Color Controls</h2>
       <label>
         Background Color:
-        <input id="backgroundColorInput" type="range" value="#FFFFFF" />
+        <input id="backgroundColorInput" type="color" value="#FFFFFF" />
+        <br>
       </label>
       <label>
         Text Color:
-        <input id="textColorInput" type="range" value="#000000" />
+        <input id="textColorInput" type="color" value="#000000" />
+        <br>
       </label>
        Border Color:
-        <input id="borderColorInput" type="range" value="#000000" />
+        <input id="borderColorInput" type="color" value="#000000" />
+        <br>
       </label>
       <label>
     </section>
-    <script>
+
+<script>
       const borderColorInput = document.getElementById('borderColorInput');
       const backgroundColorInput = document.getElementById('backgroundColorInput');
       const textColorInput = document.getElementById('textColorInput');
 
         backgroundColorInput.addEventListener("input", () => {
-            document.body.style.backgroundColor =
-            "hsl(" + backgroundColorInput.value + ", 100%, 80%)";
-            document.body.style.color =
-            "hsl(" + ((parseInt(changeOutput.value) + 180) % 360) + ", 100%, 80%)";
+            document.body.style.backgroundColor = backgroundColorInput.value;
+            document.body.style.color = changeOutput.value;
         });
 
          textColorInput.addEventListener("input", () => {
-            document.body.style.color =
-            "hsl(" + textColorInput.value + ", 100%, 80%)";
-            document.body.style.color =
-            "hsl(" + ((parseInt(changeOutput.value) + 180) % 360) + ", 100%, 80%)";
+            document.body.style.color = textColorInput.value;
+            document.body.style.color = changeOutput.value;
         });
 
         borderColorInput.addEventListener("input", () => {
-            document.body.style.borderColor =
-            "hsl(" + borderColorInput.value + ", 100%, 80%)";
-            document.styleSheets[0].in(
-              "h2 { border: hsl(" + borderColorInput.value + ", 100%, 80%) 2px solid; }"
-            );
-            // document.body.style.color =
-            // "hsl(" + ((parseInt(changeOutput.value) + 180) % 360) + ", 100%, 80%)";
+            document.body.style.borderColor = borderColorInput.value;
+            document.styleSheets[0].in = borderColorInput.value;
          });
 
     </script>   
+
+    <!-- ********************************************************** -->
+
+
 </body>
 </html>
