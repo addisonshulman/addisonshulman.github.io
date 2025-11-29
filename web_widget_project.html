@@ -99,14 +99,25 @@
     <img id="sunPicture" src="sun.jpg" width ="200" height="200"> 
     <br>
     <lable>
-      Size:
-        <input id = "sunPictureControlInput" min="0" max="400" type="range" value ="200" />
+      Width:
+        <input id = "widthSunPictureControlInput" min="0" max="400" type="range" value ="200" />
     </lable>
 
     <script>
-        const sunPictureControlInput = document.getElementById('sunPictureControlInput');
-          sunPictureControlInput.addEventListener("input", () => {
-            document.getElementById("sunPicture").width = sunPictureControlInput.value;
+        const widthSunPictureControlInput = document.getElementById('widthSunPictureControlInput');
+          widthSunPictureControlInput.addEventListener("input", () => {
+            document.getElementById("sunPicture").width = widthSunPictureControlInput.value;
+          });
+    </script>
+
+     Height:
+        <input id = "heightSunPictureControlInput" min="0" max="400" type="range" value ="200" />
+    </lable>
+
+    <script>
+        const heightSunPictureControlInput = document.getElementById('heightSunPictureControlInput');
+          heightSunPictureControlInput.addEventListener("input", () => {
+            document.getElementById("sunPicture").height = heightSunPictureControlInput.value;
           });
     </script>
 
