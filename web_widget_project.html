@@ -31,7 +31,7 @@
     </style>
 </head>
 <body>
-    <h1>Web Widget Project</h1>
+    <h1 id="header" >Web Widget Project</h1>
     <h2>In this project, you will be able to change the appearance of this page.</h2>
     <h3>You can:</h3>
     <ul>
@@ -66,17 +66,14 @@
 
         backgroundColorInput.addEventListener("input", () => {
             document.body.style.backgroundColor = backgroundColorInput.value;
-            document.body.style.color = changeOutput.value;
         });
 
          textColorInput.addEventListener("input", () => {
             document.body.style.color = textColorInput.value;
-            document.body.style.color = changeOutput.value;
         });
 
         borderColorInput.addEventListener("input", () => {
             document.body.style.borderColor = borderColorInput.value;
-            document.styleSheets[0].in = borderColorInput.value;
          });
     </script>   
     
@@ -85,19 +82,33 @@
     <h2>Header Font Control</h2>
     <lable>
       Size:
-        <input id="headerFontControlInput" type="range" value="font-size: 36px" />
+        <input id="headerFontControlInput" type="range" value="36" />
         <br>
     </lable>
 
     <script>
       const headerFontControlInput = document.getElementById('headerFontControlInput');
         headerFontControlInput.addEventListener("input", () => {
-          document.body.style.fontSize = headerFontControlInput.value;
-          document.body.style.fontSize = changeOutput.value;
+          document.getElementById("header").style.fontSize = headerFontControlInput.value + "px";
         });
     </script>
 
+<!-- ********************************************************** -->
+    <br>
+    <h2>Sun Picture Control</h2>
+    <img id="sunPicture" src="sun.jpg" width ="200" height="200"> 
+    <br>
+    <lable>
+      Size:
+        <input id = "sunPictureControlInput" min="0" max="400" type="range" value ="200" />
+    </lable>
 
+    <script>
+        const sunPictureControlInput = document.getElementById('sunPictureControlInput');
+          sunPictureControlInput.addEventListener("input", () => {
+            document.getElementById("sunPicture").width = sunPictureControlInput.value;
+          });
+    </script>
 
 </body>
 </html>
