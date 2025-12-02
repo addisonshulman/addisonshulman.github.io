@@ -12,7 +12,7 @@
         font-family: "Montserrat", serif;
         max-width: 600px;
         margin: 2rem auto;
-        border: 4px solid black;
+        border: 4px solid black; 
       }
 
       section {
@@ -34,7 +34,7 @@
     <h1 id="header" >Web Widget Project</h1>
     <h2>In this project, you will be able to change the appearance of this page.</h2>
     <h3>You can:</h3>
-    <ul>
+    <ul> unordered list
         <li>Change the color of the background.</li>
         <li>Change the color of the text.</li>
         <li>Change the color of the border.</li>
@@ -69,7 +69,7 @@
             document.body.style.backgroundColor = backgroundColorInput.value;
         });
 
-         textColorInput.addEventListener("input", () => {
+        textColorInput.addEventListener("change", () => {
             document.body.style.color = textColorInput.value;
         });
 
@@ -89,7 +89,7 @@
 
     <script>
       const headerFontControlInput = document.getElementById('headerFontControlInput');
-        headerFontControlInput.addEventListener("input", () => {
+        headerFontControlInput.addEventListener("change", () => {
           document.getElementById("header").style.fontSize = headerFontControlInput.value + "px";
         });
     </script>
